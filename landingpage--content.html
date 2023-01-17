@@ -666,7 +666,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <iframe src="https://drive.google.com/file/d/1AYr7Vuo7KO8r58nnvMtuYamgOgOhnbbH/preview" id="ytplayer"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen tabindex="-1" style="width: 100%; height: 250px;"></iframe>
+                            <iframe src="https://drive.google.com/file/d/1AYr7Vuo7KO8r58nnvMtuYamgOgOhnbbH/preview" id="gdriveplayer"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen tabindex="-1" style="width: 100%; height: 250px;"></iframe>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -1018,6 +1018,10 @@
     <script>
         $('#exampleModal1').on('hide.bs.modal', () => {
             $('#ytplayer').attr('src', 'https://drive.google.com/file/d/1e6lnq0eCgd721lD5nwFb17N2vRxkA6bk/preview');
+        });
+
+        $('#exampleModal').on('hide.bs.modal', () => {
+            $('#gdriveplayer').attr('src', 'https://drive.google.com/file/d/1AYr7Vuo7KO8r58nnvMtuYamgOgOhnbbH/preview');
         });
         
     </script>
