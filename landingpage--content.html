@@ -1,0 +1,785 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>SG - Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto';
+        }
+
+        section {
+            padding: 100px 0 0 0;
+        }
+
+        section.hero {
+            background: url('img/hero_image.jpg');
+            background-size: contain;
+            width: 100%;
+            height: 875px;
+            padding: 0;
+        }
+
+        section.hero .container {
+            height: 100%;
+            padding: 150px 0;
+        }
+
+        section.hero .vector {
+            position: absolute;
+            width: 845px;
+            height: 625px;
+            right: 0;
+        }
+
+        section.hero h1 {
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 82px;
+            color: #fff;
+        }
+
+        section.hero p {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 135.2%;
+            color: #fff;
+        }
+
+        section.hero .hero-button {
+            display: inline-block;
+            background: #EDBF58;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 23.44px;
+            color: #003152;
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+        }
+
+        .fs-12px {
+            font-size: 12px !important;
+        }
+
+        .fs-13px {
+            font-size: 13px !important;
+        }
+
+        .fs-14px {
+            font-size: 14px !important;
+        }
+
+        .fs-15px {
+            font-size: 15px !important;
+        }
+
+        .fs-16px {
+            font-size: 16px !important;
+        }
+
+        .fs-18px {
+            font-size: 18px !important;
+        }
+
+        .fs-20px {
+            font-size: 20px !important;
+        }
+
+        .fs-24px {
+            font-size: 24px !important;
+        }
+
+        .fs-30px {
+            font-size: 30px !important;
+        }
+
+        .fs-36px {
+            font-size: 36px !important;
+        }
+
+        .fs-40px {
+            font-size: 40px !important;
+        }
+
+        .fs-48px {
+            font-size: 48px !important;
+        }
+
+        .fs-64px {
+            font-size: 64px !important;
+        }
+
+        .fw-100 {
+            font-weight: 100 !important;
+        }
+
+        .fw-200 {
+            font-weight: 200 !important;
+        }
+
+        .fw-300 {
+            font-weight: 300 !important;
+        }
+
+        .fw-400 {
+            font-weight: 400 !important;
+        }
+
+        .fw-500 {
+            font-weight: 500 !important;
+        }
+
+        .fw-600 {
+            font-weight: 600 !important;
+        }
+
+        .fw-700 {
+            font-weight: 700 !important;
+        }
+
+        .fw-800 {
+            font-weight: 800 !important;
+        }
+
+        .fw-900 {
+            font-weight: 900 !important;
+        }
+
+        .radius-0px {
+            border-radius: 0px !important;
+        }
+
+        .radius-5px {
+            border-radius: 5px !important;
+        }
+
+        .radius-10px {
+            border-radius: 10px !important;
+        }
+
+        .radius-15px {
+            border-radius: 15px !important;
+        }
+
+        .radius-20px {
+            border-radius: 20px !important;
+        }
+
+        .radius-25px {
+            border-radius: 25px !important;
+        }
+
+        .radius-30px {
+            border-radius: 30px !important;
+        }
+
+        .padding-0px {
+            padding: 0px !important;
+        }
+
+        .padding-5px {
+            padding: 5px !important;
+        }
+
+        .padding-10px {
+            padding: 10px !important;
+        }
+
+        .padding-15px {
+            padding: 15px !important;
+        }
+
+        .padding-20px {
+            padding: 20px !important;
+        }
+
+        .padding-25px {
+            padding: 25px !important;
+        }
+
+        .padding-30px {
+            padding: 30px !important;
+        }
+    </style>
+
+    <style>
+        .sagata-bg-light {
+            background: rgba(217, 217, 217, 0.05);
+        }
+
+        .sagata-bg-dark-1 {
+            background: #00AEEF;
+        }
+
+        .sagata-bg-gradient {
+            background: linear-gradient(270deg, #00699F, #00AEEF);
+        }
+
+        .sagata-color-dark-1 {
+            color: #003152;
+        }
+
+        .sagata-color-dark-2 {
+            color: #292929;
+        }
+
+        .sagata-color-dark-3 {
+            color: #0078B0;
+        }
+
+        .sagata-color-dark-4 {
+            color: #000;
+        }
+
+        .sagata-color-light-1 {
+            color: #b6fffe;
+        }
+
+        .sagata-color-light-2 {
+            color: #00AEEF;
+        }
+
+        .sagata-shadow {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .sagata-banner {
+            background: linear-gradient(180deg, #00699F, #00AEEF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1300px;
+            height: 250px;
+        }
+    </style>
+<head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="col-6 col-md-2">
+                <a class="navbar-brand" href="#"><img src="img/logo_sga_teks-1.png" class="img-fluid" alt=""></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="align-self: center;">
+
+                <!-- <div class="navbar-nav justify-content-center">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                </div> -->
+
+                <div class="col-md-8 justify-content-center">
+                    <ul class="navbar-nav justify-content-center" style="margin-block-start: 0px!important; padding-inline-start: 0px !important; padding: 0px !important;">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/program') }}">Webinar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Program</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Corporate Program</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Belajar langsung dari Ahlinya</h1>
+                    <p>Bangun karir impian dan asah skill secara profesional dengan mengikuti berbagai pilihan kursus yang terbaik untukmu disini.</p>
+                    <a class="hero-button" href="#">
+                        Cari Kursus Pilihanmu
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <img class="vector" src="img/hero_vector.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card border-0 radius-10px sagata-shadow text-center">
+                        <div class="card-body padding-30px">
+                            <div class="w-75 mx-auto">
+                                <div class="d-flex align-items-center justify-content-center mb-2" style="height: 65px;">
+                                    <img src="img/standard.png" alt="">
+                                </div>
+                                <p class="fs-15px fw-400 mb-0">Materi berstandar pada kebutuhan industri</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 radius-10px sagata-shadow text-center">
+                        <div class="card-body padding-30px">
+                            <div class="w-75 mx-auto">
+                                <div class="d-flex align-items-center justify-content-center mb-2" style="height: 65px;">
+                                    <img src="img/easy.png" alt="">
+                                </div>
+                                <p class="fs-15px fw-400 mb-0">Dapat diakses kapan dan dimana saja</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 radius-10px sagata-shadow text-center">
+                        <div class="card-body padding-30px">
+                            <div class="w-100 mx-auto">
+                                <div class="d-flex align-items-center justify-content-center mb-2" style="height: 65px;">
+                                    <img src="img/money.png" alt="">
+                                </div>
+                                <p class="fs-15px fw-400 mb-0">Biaya course lebih terjangkau bikin hemat pengeluaran</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 radius-10px sagata-shadow text-center">
+                        <div class="card-body padding-30px">
+                            <div class="w-75 mx-auto">
+                                <div class="d-flex align-items-center justify-content-center mb-2" style="height: 65px;">
+                                    <img src="img/logo-itb.png" alt="">
+                                </div>
+                                <p class="fs-15px fw-400 mb-0">Pembelajaran berafiliasi pada ITB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">Promo Spesial Untuk Kamu Belajar Hari Ini</h2>
+
+                    <div class="sagata-banner radius-10px">
+                        <!-- <p class="fw-700 mb-0" style="font-size: 100px;">Banner 1300x250</p> -->
+                        <img class="w-100" src="img/sample_banner.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">Program Unggulan SGA</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card sagata-bg-light border-0 radius-10px sagata-shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center" style="height: 40px;">
+                                    <img class="h-100" src="img/logo-itb.png" alt="">
+                                </div>
+                                <span class="sagata-color-dark-3 fs-24px fw-500 ms-2">Non Regular ITB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card sagata-bg-light border-0 radius-10px sagata-shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center" style="height: 40px;">
+                                    <img class="h-100" src="img/icon_facetime.png" alt="">
+                                </div>
+                                <span class="sagata-color-dark-3 fs-24px fw-500 ms-2">Webinar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card sagata-bg-light border-0 radius-10px sagata-shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center" style="height: 40px;">
+                                    <img class="h-100" src="img/icon_media_video.png" alt="">
+                                </div>
+                                <span class="sagata-color-dark-3 fs-24px fw-500 ms-2">Video Course</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card sagata-bg-light border-0 radius-10px sagata-shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center" style="height: 40px;">
+                                    <img class="h-100" src="img/icon_rocket.png" alt="">
+                                </div>
+                                <span class="sagata-color-dark-3 fs-24px fw-500 ms-2">Bootcamp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-baseline justify-content-between">
+                        <div>
+                            <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">Video Course Populer yang Bisa Kamu Pelajari</h2>
+                            <p class="fs-20px fw-400 sagata-color-dark-2">Belajar dan dapatkan sertifikat pembelajarannya!</p>
+                        </div>
+
+                        <a class="fs-15px fw-400 radius-15px sagata-color-dark-4 text-decoration-none" href="#" style="border: 1px solid #000; padding: 10px 50px;">Lihat lainnya >></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 radius-15px">
+                        <img src="img/thumbnail/sample_thumbnail_1.png" alt="">
+                        <div class="card-body" style="padding: 30px 0;">
+                            <h3 class="fs-20px fw-700">Mempelajari Digital Marketing Landscape (Advanced)</h3>
+                            <div class="mb-3">
+                                <span class="me-2">
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                </span>
+                                <span class="fs-14px fw-300">(4.8) 923 reviews</span>
+                            </div>
+                            <div class="d-flex">
+                                <span style="width: 40px; height: 40px; background: #003152; border-radius: 50%;"></span>
+                                <div class="ms-2">
+                                    <p class="fs-16px fw-400 mb-0">Irfan Prabowo</p>
+                                    <p class="fs-16px fw-300 mb-0">Head of Marketing at Lemonio</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-flex align-items-baseline justify-content-end">
+                                    <span class="fs-15px fw-300 me-2">Harga</span>
+                                    <span class="fs-24px fw-700 sagata-color-dark-3">Rp 49.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 radius-15px">
+                        <img src="img/thumbnail/sample_thumbnail_2.png" alt="">
+                        <div class="card-body" style="padding: 30px 0;">
+                            <h3 class="fs-20px fw-700">Mempelajari Digital Marketing Landscape (Beginner)</h3>
+                            <div class="mb-3">
+                                <span class="me-2">
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                    <i class="fas fa-star sagata-color-light-1"></i>
+                                </span>
+                                <span class="fs-14px fw-300">(4.9) 542 reviews</span>
+                            </div>
+                            <div class="d-flex">
+                                <span style="width: 40px; height: 40px; background: #003152; border-radius: 50%;"></span>
+                                <div class="ms-2">
+                                    <p class="fs-16px fw-400 mb-0">Angga Fauzan</p>
+                                    <p class="fs-16px fw-300 mb-0">CEO and Cofounder at Myskill</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-flex align-items-baseline justify-content-end">
+                                    <span class="fs-15px fw-300 me-2">Harga</span>
+                                    <span class="fs-24px fw-700 sagata-color-dark-3">Rp 39.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-baseline justify-content-between">
+                        <div>
+                            <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">SGA Bootcamp</h2>
+                            <p class="fs-20px fw-400 sagata-color-dark-2">Belajar secara intensif selama 3-6 bulan bersama Profesional Expert</p>
+                        </div>
+
+                        <a class="fs-15px fw-400 radius-15px sagata-color-dark-4 text-decoration-none" href="#" style="border: 1px solid #000; padding: 10px 50px;">Lihat lainnya >></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card radius-10px sagata-shadow">
+                        <div class="card-body padding-25px">
+                            <img class="w-100 mb-3" src="img/thumbnail/sample_thumbnail_illustration.png" alt="">
+                            <h3 class="fs-24px fw-700">Digital Marketer</h3>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <p class="fs-12px fw-400 sagata-color-dark-2 mb-0">Durasi Program</p>
+                                    <p class="fs-12px fw-300 sagata-color-dark-2 mb-0">3 Bulan</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="fs-12px fw-400 sagata-color-dark-2 mb-0">Jumlah Pertemuan</p>
+                                    <p class="fs-12px fw-300 sagata-color-dark-2 mb-0">12 Pertemuan</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="d-inline-block fs-12px fw-400 radius-20px me-1" style="background: #D80707; color: #fff; padding: 5px 10px;">50%</span>
+                                    <span class="d-inline-block fs-18px fw-700 sagata-color-light-2">Rp 2.000.000</span>
+                                </div>
+                                <span class="fs-12px fw-400 text-decoration-line-through">Rp 4.000.000</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btn sagata-bg-dark-1 fs-14px fw-700 text-light text-uppercase" style="padding: 10px 7.5px;">Daftar Batch 1</a>
+                                <a href="#" class="btn btn-outline-primary fs-14px fw-700 text-uppercase" style="padding: 10px 7.5px;">Hubungi Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-baseline justify-content-between">
+                        <div>
+                            <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">SGA Bootcamp</h2>
+                        </div>
+
+                        <a class="fs-15px fw-400 radius-15px sagata-color-dark-4 text-decoration-none" href="#" style="border: 1px solid #000; padding: 10px 50px;">Lihat lainnya >></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card radius-10px" style="border: 1px solid rgba(41, 41, 41, 0.5);">
+                        <img src="img/sample_mentor_1.png" alt="" style="margin: -1px;">
+                        <div class="card-body">
+                            <h3 class="fs-24px fw-700 sagata-color-dark-2 mb-0">Angga Fauzan</h3>
+                            <p class="fs-20px fw-400 sagata-color-dark-2 mb-0">CEO at Myskill</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card radius-10px" style="border: 1px solid rgba(41, 41, 41, 0.5);">
+                        <img src="img/sample_mentor_2.png" alt="" style="margin: -1px;">
+                        <div class="card-body">
+                            <h3 class="fs-24px fw-700 sagata-color-dark-2 mb-0">Irfan Prabowo</h3>
+                            <p class="fs-20px fw-400 sagata-color-dark-2 mb-0">Head of Marketing at Lemonio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            <div class="d-flex align-items-baseline justify-content-between">
+                                <div>
+                                    <h2 class="fs-40px fw-700 sagata-color-dark-1" style="margin-bottom: 30px;">Webinar</h2>
+                                    <p class="fs-20px fw-400 sagata-color-dark-2">Event rutin dari Salam Ganesha Academy yang berkolaborasi dengan para expert</p>
+                                </div>
+        
+                                <a class="fs-15px fw-400 radius-15px sagata-color-dark-4 text-decoration-none" href="#" style="border: 1px solid #000; padding: 10px 50px;">Lihat lainnya >></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card radius-10px">
+                        <div class="card-body">
+                            <img class="w-100 mb-3" src="img/sample_webinar.png" alt="">
+                            <span class="d-inline-block fs-18px fw-700" style="color: #00699F;">Webinar Salam Berbagi</span>
+                            <h3 class="fs-20px fw-700 sagata-color-dark-2">Energi Terbarukan Sebagai Solusi Indonesia Net Zero Emmision 2060</h3>
+                            <div class="row">
+                                <div class="col-6">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span class="ms-1">Minggu, 25 Juni 2022</span>
+                                </div>
+                                <div class="col-6">
+                                    <i class="far fa-clock"></i>
+                                    <span class="ms-1">14.00 WIB - Selesai</span>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-flex align-items-baseline justify-content-end">
+                                    <span class="fs-20px fw-400 me-2">Mulai dari</span>
+                                    <span class="fs-36px fw-700" style="color: #00AEEF;">Gratis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sagata-bg-gradient" style="color: #fff; padding: 50px 0; margin-top: 100px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img class="w-100" src="img/mentor_vector.png" alt="">
+                </div>
+                <div class="col-md-7 offset-md-1">
+                    <h2 class="fs-48px fw-700 mb-2">Daftar jadi Mentor Belajar Salam Ganesha Academy</h2>
+                    <p class="fs-16px fw-700 mb-4">Kamu seorang yang sudah berkarir maupun memiliki pengalaman bertahun lamanya di perusahaan terkemuka? Yuk, ikut daftar jadi mentor baru</p>
+                    <a class="d-inline-block fs-16px fw-700 text-decoration-none radius-20px" href="#" style="background: #EDBF58; color: #003152; padding: 10px 50px;">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fs-48px fw-700 text-center sagata-color-dark-1" style="margin-bottom: 30px;">Alumni SGA Berbicara</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 radius-20px shadow" style="height: 360px;">
+                        <div class="card-body">
+                            <div class="d-flex h-100">
+                                <div class="text-center mt-auto">
+                                    <img src="img/sample_alumni_1.png" alt="" style="width: 106px; height: 106px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+                                    <h3 class="fs-18px fw-700" style="color: #00AEEF;">Salwa Ramadhani</h3>
+                                    <p class="fs-15px fw-400 mb-5">selama aku mengikuti bootcamp, sistem belajarnya ga ngebosenin dan pengajarnya sudah berpengalaman dari Gojek</p>
+                                    <p class="fs-15px fw-400 mb-0">Technopreneur</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 radius-20px shadow" style="height: 360px;">
+                        <div class="card-body">
+                            <div class="d-flex h-100">
+                                <div class="text-center mt-auto">
+                                    <img src="img/sample_alumni_2.png" alt="" style="width: 106px; height: 106px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+                                    <h3 class="fs-18px fw-700" style="color: #00AEEF;">Raline</h3>
+                                    <p class="fs-15px fw-400 mb-5">sebelumnya aku biasa nemuin online course itu mahal-mahal harganya tapi berbeda dengan di SGA itu harganya terjangkau sekali dan sertifikatnya berlaku untuk karir aku</p>
+                                    <p class="fs-15px fw-400 mb-0">Pekerja Kreatif</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 radius-20px shadow" style="height: 360px;">
+                        <div class="card-body">
+                            <div class="d-flex h-100">
+                                <div class="text-center mt-auto">
+                                    <img src="img/sample_alumni_3.png" alt="" style="width: 106px; height: 106px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
+                                    <h3 class="fs-18px fw-700" style="color: #00AEEF;">Gibran Rak</h3>
+                                    <p class="fs-15px fw-400 mb-5">kemampuanku sebelumnya masih dibawah rata-rata namun setelah aku mengikuti bootcamp, skill diri saya menaik</p>
+                                    <p class="fs-15px fw-400 mb-0">Akademisi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fs-48px fw-700 text-center sagata-color-dark-1 mb-5">Lulusan SGA telah bekerja di</h2>
+
+                    <div class="text-center">
+                        <img src="img/logo_tokopedia.png" alt="">
+                        <img src="img/logo_airasia.png" alt="">
+                        <img src="img/logo_lazada.png" alt="">
+                        <img src="img/logo_alfamart.png" alt="">
+                        <img src="img/logo_coach.png" alt="">
+                        <img src="img/logo_ismaya.png" alt="">
+                        <img src="img/logo_transmart.png" alt="">
+                        <img src="img/logo_oyohotel.png" alt="">
+                        <img src="img/logo_kulina.png" alt="">
+                        <img src="img/logo_thepalace.png" alt="">
+                        <img src="img/logo_vans.png" alt="">
+                        <img src="img/logo_steak21.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container sagata-bg-gradient text-light border-0 radius-30px" style="padding: 75px;">
+            <div class="row">
+                <div class="col-md-5">
+                    <img class="w-100" src="img/consult_vector.png" alt="">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="fs-64px fw-700 mb-4">Yuk, Konsultasikan Karir-mu secara gratis melalui expert kami</h2>
+                    <a class="d-inline-block fs-20px fw-700 text-decoration-none radius-20px" href="#" style="background: #EDBF58; color: #003152; padding: 10px 50px;">Klik di sini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
