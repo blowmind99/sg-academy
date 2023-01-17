@@ -9,55 +9,230 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <style>
+        .img-nav
+        {
+            height: 54 !important;
+        }
+        .menu-link
+        {
+            color: black;
+            margin-top: 10px;
+        }
+        .navbar-light .navbar-nav .nav-link {
+            color: black;
+        }
+        .navbar-light .navbar-nav .nav-link:hover{
+            color: #00AEEF;
+        }
+        .item-right{
+            padding-top: 4px;
+        }
 
+        .btn-nav{
+            margin-top: 4px;
+        }
+        .icon-navbar
+        {
+            padding-top: 8px;
+        }
+        .icon-nav
+        {
+            text-decoration: none;
+            color: black;
+        }
+
+        .btn-nav-login{
+            margin-left: 44px;
+            margin-right: 24px;
+            padding-top: 2px;
+            padding-bottom: 4px;
+            padding-right: 24px;
+            padding-left: 24px;
+            border: 2px solid #00AEEF
+        }
+
+        .btn-nav-daftar
+        {
+            padding-top: 2px;
+            padding-bottom: 4px;
+            padding-right: 24px;
+            padding-left: 24px;
+            background: #00AEEF;
+            border: 2px solid #00AEEF;
+            color: white;
+        }
+
+        .footer-row-menu
+        {
+            padding-top: 64px;
+            --bs-gutter-x: 1.8rem !important;
+        }
+        .title-footer
+        {
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .menu-footer
+        {
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .menu-link-footer
+        {
+            margin-bottom: 8px;
+        }
+        .icon-footer
+        {
+            margin-right: 24px;
+        }
+        
+        .link-icon-footer
+        {
+            text-decoration: none !important;
+            color: #292929;
+        }
+        @media(max-width: 767px){
+            .icon-navbar
+            {
+                padding-bottom: 10px;
+            }
+            .btn-nav-login
+            {
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 <head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <div class="col-6 col-md-2">
-                <a class="navbar-brand" href="#"><img src="img/logo_sga_teks-1.png" class="img-fluid" alt=""></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="align-self: center;">
-
-                <!-- <div class="navbar-nav justify-content-center">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
-                </div> -->
-
-                <div class="col-md-8 justify-content-center">
-                    <ul class="navbar-nav justify-content-center" style="margin-block-start: 0px!important; padding-inline-start: 0px !important; padding: 0px !important;">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/program') }}">Webinar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Program</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Corporate Program</a>
-                        </li>
-                    </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <div class="col-6 col-md-2">
+                    <a class="navbar-brand" href="#"><img src="img/logo_sga_teks-1.png" class="img-fluid img-nav" alt=""></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="menu-link col-md-8 justify-content-center">
+                        <ul class="navbar-nav justify-content-between" style="margin-block-start: 0px!important; padding-inline-start: 0px !important; padding: 0px !important;">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Webinar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Program</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Corporate Program</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="item-right navbar-nav justify-content-end">
+                            <li class="icon-navbar nav-item">
+                                <a class="icon-nav" href="#">
+                                    <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                                </a>
+                            </li>
+                            <li class="btn-nav nav-item">
+                                <a class="btn btn-nav-login" href="#">Login</a>
+                            </li>
+                            <li class="btn-nav nav-item">
+                                <a class="btn btn-nav-daftar" href="#">Daftar</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <section class="footer" style="background: rgba(217, 217, 217, 0.2);">
+            <div class="container">
+                <div class="row align-self-center footer-row-menu">
+                    <div class="col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">ABOUT US</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Tentang Kami</li>
+                                    <li class="menu-link-footer">Alumni</li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">LAYANAN</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Online Class</li>
+                                    <li class="menu-link-footer">Bootcamp</li>
+                                    <li class="menu-link-footer">Webinar</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">JOIN GRUP</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Whatsapp</li>
+                                    <li class="menu-link-footer">Telegram</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">Help Desk</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">FAQ</li>
+                                    <li class="menu-link-footer">Ketentuan Layanan</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">Social Media</h3>
+                                <ul class="menu-footer d-flex justify-content-start">
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/Vector.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/instagram 1.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/linkedin 1.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 d-flex justify-content-center mt-4 mb-3">
+                        <img class="img-fluid" src="img/logo_sga_teks-1.png" alt="" style="width: 114px; height: 39px;">
+                        <h3 style="font-size: 14px; font-weight: 400; margin-top: 12px;">PT. Salam Kreasi Ganesha. 2022</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>

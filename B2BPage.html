@@ -1,0 +1,395 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>SG - Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        html
+        {
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+        .img-nav
+        {
+            height: 54 !important;
+        }
+        .menu-link
+        {
+            color: black;
+            margin-top: 10px;
+        }
+        .navbar-light .navbar-nav .nav-link {
+            color: black;
+        }
+        .navbar-light .navbar-nav .nav-link:hover{
+            color: #00AEEF;
+        }
+        .item-right{
+            padding-top: 4px;
+        }
+
+        .btn-nav{
+            margin-top: 4px;
+        }
+        .icon-navbar
+        {
+            padding-top: 8px;
+        }
+        .icon-nav
+        {
+            text-decoration: none;
+            color: black;
+        }
+
+        .btn-nav-login{
+            margin-left: 44px;
+            margin-right: 24px;
+            padding-top: 2px;
+            padding-bottom: 4px;
+            padding-right: 24px;
+            padding-left: 24px;
+            border: 2px solid #00AEEF
+        }
+
+        .btn-nav-daftar
+        {
+            padding-top: 2px;
+            padding-bottom: 4px;
+            padding-right: 24px;
+            padding-left: 24px;
+            background: #00AEEF;
+            border: 2px solid #00AEEF;
+            color: white;
+        }
+
+        .footer-row-menu
+        {
+            padding-top: 64px;
+            --bs-gutter-x: 1.8rem !important;
+        }
+        .title-footer
+        {
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .menu-footer
+        {
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .menu-link-footer
+        {
+            margin-bottom: 8px;
+        }
+        .icon-footer
+        {
+            margin-right: 24px;
+        }
+        
+        .link-icon-footer
+        {
+            text-decoration: none !important;
+            color: #292929;
+        }
+        .text-hero-b2b
+        {
+            margin-top: 18px;
+        }
+        .hero-title-b2b
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 47px;
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+        }
+
+        .hero-subtitle-b2b
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            width: 84%;
+            color: #FFFFFF;
+        }
+
+        .text-label
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+            color: #00699F;
+        }
+        .input-b2b
+        {
+            border: rgba(217, 217, 217, 0.4);
+            border-radius: 15px;
+            background: rgba(217, 217, 217, 0.4);
+            height: 40px;
+            margin-bottom: 1.5rem;
+        }
+        .mb-38
+        {
+            margin-bottom: 2.375rem !important;
+        }
+
+        .btn-b2b
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 23px;
+            color: #003152;
+            background: #EDBF58;
+            border-radius: 20px;
+            padding: 14px 38px 14px 38px;
+        }
+
+        .card-b2b
+        {
+            width: 650px;
+        }
+
+        @media(max-width: 767px){
+            .icon-navbar
+            {
+                padding-bottom: 10px;
+            }
+
+            .btn-nav-login
+            {
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+
+            .card-b2b
+            {
+                width: auto;
+            }
+        }
+    </style>
+<head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+        <div class="container">
+            <div class="col-6 col-md-2">
+                <a class="navbar-brand" href="#"><img src="img/logo_sga_teks-1.png" class="img-fluid img-nav" alt=""></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="menu-link col-md-8 justify-content-center">
+                    <ul class="navbar-nav justify-content-between" style="margin-block-start: 0px!important; padding-inline-start: 0px !important; padding: 0px !important;">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Webinar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Program</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Corporate Program</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="item-right navbar-nav justify-content-end">
+                        <li class="icon-navbar nav-item">
+                            <a class="icon-nav" href="#">
+                                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                            </a>
+                        </li>
+                        <li class="btn-nav nav-item">
+                            <a class="btn btn-nav-login" href="#">Login</a>
+                        </li>
+                        <li class="btn-nav nav-item">
+                            <a class="btn btn-nav-daftar" href="#">Daftar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="hero-b2b" style="background: linear-gradient(180deg, #00AEEF 0%, #00699F 89.06%);">
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="img/Mentor regist-OrangeUI SGA Vector 2.png" alt="" class="img-fluid mb-4" style="width: 483px; height: 373px;">
+                            <div class="text-hero-b2b">
+                                <h3 class="hero-title-b2b">Salam Ganesha Academy For Business Program</h3>
+                                <p class="hero-subtitle-b2b">Program Unggulan SGA terkusus untuk perusahaan yang menginginkan pencapaian maksimal dari setiap individu yang bekerja didalamnya</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                        <div>
+                            <div class="card card-b2b">
+                                <div class="card-body">
+                                    <div class="row mb-38">
+                                        <div class="col-12 col-md-6">
+                                            <label for="" class="text-label mb-2">Nama Perusahaan</label>
+                                            <input type="text" class="form-control input-b2b" placeholder="Isikan disini">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label for="" class="text-label mb-2">Nama PIC</label>
+                                            <input type="text" class="form-control input-b2b" placeholder="Isikan disini">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-38">
+                                        <div class="col-12 col-md-6">
+                                            <label for="" class="text-label mb-2">Email PIC</label>
+                                            <input type="email" class="form-control input-b2b" placeholder="Isikan disini">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label for="" class="text-label mb-2">Nama PIC</label>
+                                            <input type="text" class="form-control input-b2b" placeholder="Isikan disini">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-38">
+                                        <div class="col-12 col-md-12">
+                                            <label for="" class="text-label mb-2">Prgoram yang ingin diambil</label>
+                                            <!-- <select name="" id="" class="form-control">
+                                                <option disable selected>Pilih Program</option>
+                                            </select> -->
+                                            <select class="form-select mb-3" aria-label=".form-select example" style="background: rgba(217, 217, 217, 0.4);">
+                                                <option selected>Pilih Program</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-38">
+                                        <div class="col-12 col-md-12">
+                                            <label for="" class="text-label mb-2">Estimasi Budget Program</label>
+                                            <!-- <select name="" id="" class="form-control">
+                                                <option disable selected>Pilih Range Budget</option>
+                                            </select> -->
+                                            <select class="form-select mb-3" aria-label=".form-select example" style="background: rgba(217, 217, 217, 0.4);">
+                                                <option selected>Range Budget</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-12">
+                                            <label for="" class="text-label mb-2">Pesan</label>
+                                            <textarea name="" id="" cols="10" rows="4" class="form-control" style="background: rgba(217, 217, 217, 0.4);"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-b2b">Kirim Formulir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer" style="background: rgba(217, 217, 217, 0.2);">
+            <div class="container">
+                <div class="row align-self-center footer-row-menu">
+                    <div class="col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">ABOUT US</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Tentang Kami</li>
+                                    <li class="menu-link-footer">Alumni</li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">LAYANAN</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Online Class</li>
+                                    <li class="menu-link-footer">Bootcamp</li>
+                                    <li class="menu-link-footer">Webinar</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">JOIN GRUP</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">Whatsapp</li>
+                                    <li class="menu-link-footer">Telegram</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">Help Desk</h3>
+                                <ul class="menu-footer">
+                                    <li class="menu-link-footer">FAQ</li>
+                                    <li class="menu-link-footer">Ketentuan Layanan</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2">
+                                <h3 class="title-footer mb-3">Social Media</h3>
+                                <ul class="menu-footer d-flex justify-content-start">
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/Vector.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/instagram 1.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                    <li class="icon-footer">
+                                        <a href="" class="link-icon-footer">
+                                            <img src="img/linkedin 1.png" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 d-flex justify-content-center mt-4 mb-3">
+                        <img class="img-fluid" src="img/logo_sga_teks-1.png" alt="" style="width: 114px; height: 39px;">
+                        <h3 style="font-size: 14px; font-weight: 400; margin-top: 12px;">PT. Salam Kreasi Ganesha. 2022</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>
